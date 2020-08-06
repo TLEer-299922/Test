@@ -1,0 +1,18 @@
+<Scene Version="1" Width="640" Height="480" Fps="25" Portrait="false">
+    <SceneItems>
+        <SceneItem Name="视频 #2" Type="0">
+            <Render FillMode="2" Background="#00000000" Pos="0.250000,0.250000,0.750000,0.750000"/>
+        </SceneItem>
+        <SceneItem Name="文字 #1" Type="6" PlayMode="0">
+            <Style Font="Microsoft YaHei UI" Size="36" Weight="400" Style="0" Color="#ffffff" OutlineColor="#000000" ShadowColor="#808080"/>
+            <Medias>
+                <Media Active="true">Hello,World.</Media>
+            </Medias>
+            <Render FillMode="0" Maximized="0" Background="#00000000" Pos="0.000000,0.000000,1.000000,1.000000"/>
+        </SceneItem>
+        <SceneItem Name="屏幕捕获 #1" Type="3">
+            <Media Pos="0,0,1920,1048" Fps="0"/>
+            <Render FillMode="2" Maximized="0" Background="#00000000" Pos="0.000000,0.000000,1.000000,0.608333"/>
+        </SceneItem>
+    </SceneItems>
+</Scene>

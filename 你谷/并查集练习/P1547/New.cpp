@@ -1,0 +1,85 @@
+#include <cstdio>
+#include <algorithm>
+#include <vector>
+struct Union
+{
+    Union(int n)
+    {
+        val.resize(n + 1);
+        for (int i = 1; i <= n; i++)
+        {
+            val[i] = i;
+        }
+    }
+    int findfather(int s)
+    {
+        int olds = s;
+        while (val[s] != s)
+            s = val[s];
+        if (olds != s)
+            val[olds] = s;
+        return s;
+    }
+    bool Unbro(int a, int b)
+    {
+        return findfather(a) != findfather(b);
+    }
+    void merge(int a, int b)
+    {
+        val[findfather(b)] = findfather(a);
+    }
+    void print()
+    {
+        for (int i = 1; i < val.size(); i++)
+            printf("%d ", i);
+        printf("\n");
+        for (int i = 1; i < val.size(); i++)
+            printf("| ");
+        printf("\n");
+        for (int i = 1; i < val.size(); i++)
+            printf("v ");
+        printf("\n");
+        for (int i = 1; i < val.size(); i++)
+            printf("%d ", val[i]);
+        printf("\n");
+    }
+    std::vector<int> val;
+};
+struct line
+{
+    int l, r, qz;
+    void input()
+    {
+        scanf("%d%d%d", &l, &r, &qz);
+    }
+} a[10001];
+bool cmp(line a, line s)
+{
+    return a.qz < s.qz;
+}
+int main()
+{
+    int n, m, tot = 0, ans = 0;
+    scanf("%d%d", &n, &m);
+    Union U(n);
+    for (int i = 0; i < m; i++)
+    {
+        a[i].input();
+    }
+    std::sort(a, a + m, cmp);
+    for (int i = 0; i < m && tot < (n - 1); i++)
+    {
+        if (U.Unbro(a[i].l, a[i].r))
+        {
+            U.merge(a[i].l, a[i].r);
+            tot++;
+            if (a[i].qz > ans)
+                ans = a[i].qz;
+        }
+    }
+    // U.print();
+    printf("%d\n", ans);
+    tot = 0;
+    ans = 0;
+    return 0;
+}

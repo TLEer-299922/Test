@@ -1,0 +1,8 @@
+Windows+v=剪贴板
+Windows+i=设置
+@别人:@[名字](/user/user号码) ¿
+\color{颜色}\text{你要说的话}
+CF: Konjac.Codeforces 613099dyq
+lg: _TLEer_ 613099dyq
+ybt:hhhhhhhhhhhhhhhhhhh 613099dyq
+
